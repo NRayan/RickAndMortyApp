@@ -1,21 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { MainPage } from './src/screens/MainPage';
+import { PatrickHandSC_400Regular } from "@expo-google-fonts/patrick-hand-sc";
+import { OpenSans_400Regular, OpenSans_600SemiBold } from "@expo-google-fonts/open-sans";
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    PatrickHandSC_400Regular,
+    OpenSans_400Regular,
+    OpenSans_600SemiBold,
+  })
+
+  if (!fontsLoaded) {
+    return <AppLoading />
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <MainPage />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
