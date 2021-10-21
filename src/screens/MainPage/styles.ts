@@ -23,8 +23,27 @@ export const ss = StyleSheet.create({
         marginTop: 10,
     },
     chacartersScrollContainer: {
-        height: 120,
-        justifyContent: 'center',
+        height: 140,
+        paddingRight: 20
+    },
+    locationsScrollContainer: {
+        height: 150,
+        paddingRight: 30,
+        alignItems: 'flex-end'
+    },
+    locationsView: {
+        marginTop: 40
+    },
+    footer: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        padding: 20,
+        paddingTop: 60
+    },
+    footerLine: {
+        flexDirection: 'row',
+        width: '100%',
+        justifyContent: 'space-between',
         alignItems: 'center'
     }
 })

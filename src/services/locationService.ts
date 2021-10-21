@@ -1,41 +1,36 @@
 import api from "./api";
 
-type characterProps = {
+type locationProps = {
     id: number,
     name: string,
-    image: string,
-    species: string,
-    gender: string,
-    status: string,
+    type: string,
+    dimension: string,
 }
 
-async function getAll(): Promise<characterProps[]> {
+async function getAll(): Promise<locationProps[]> {
 
-    const response: any = await api.get('/character');
+    const response: any = await api.get('/location');
     const items = buildObject(response.data.results);
     return items;
 }
 
-async function getSome(): Promise<characterProps[]> {
+async function getSomeLocations(): Promise<locationProps[]> {
 
     const randomNumbers = getRandomNumbers();
 
-    const response: any = await api.get(`/character/${randomNumbers}`);
+    const response: any = await api.get(`/location/${randomNumbers}`);
     const items = buildObject(response.data);
     return items;
-
 }
 
-function buildObject(data: any[]): characterProps[] {
+function buildObject(data: any[]): locationProps[] {
 
-    const buildedItems: characterProps[] = data.map(item => {
-        const buildedItem: characterProps = {
+    const buildedItems: locationProps[] = data.map(item => {
+        const buildedItem: locationProps = {
             id: item.id,
             name: item.name,
-            image: item.image,
-            species: item.species,
-            gender: item.gender,
-            status: item.status
+            dimension: item.dimension,
+            type: item.type,
         }
 
         return buildedItem;
@@ -51,7 +46,7 @@ function getRandomNumbers() {
     numbers = [];
 
     while (numbers.length < 8) {
-        const Random = Math.floor(Math.random() * 671) + 1;
+        const Random = Math.floor(Math.random() * 108) + 1;
         if (numbers.indexOf(Random) === -1)
             numbers.push(Random);
     }
@@ -62,11 +57,7 @@ function getRandomNumbers() {
     })
 
     return formatedString;
-
 }
 
-
-
-
-export { characterProps, getAll, getSome }
+export { locationProps, getAll, getSomeLocations }
 

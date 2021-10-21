@@ -3,23 +3,24 @@ import { theme } from '../../global/theme'
 
 export const ss = StyleSheet.create({
     container: {
-        height: 120,
-        width: 120,
+        height: 140,
+        width: 140,
         borderRadius: 10,
         overflow: 'hidden',
         marginLeft: 20
     },
     image: {
-        height: 120,
-        width: 120,
+        height: 140,
+        width: 140,
     },
     title: {
         fontSize: 16,
-        // color: theme.colors.text2,
-        color: '#000',
+        lineHeight: 16,
+        color: theme.colors.text1,
         fontFamily: theme.fonts.title,
         position: 'absolute',
-        alignSelf: 'center'
-
+        bottom: 0,
+        alignSelf: 'center',
+        textAlign: 'center',
     }
 })
