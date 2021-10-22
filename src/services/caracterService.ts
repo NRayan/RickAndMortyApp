@@ -7,11 +7,15 @@ type characterProps = {
     species: string,
     gender: string,
     status: string,
+    origin: string
 }
 
-async function getAll(): Promise<characterProps[]> {
+async function getPage(page: number, filter: string): Promise<characterProps[]> {
 
-    const response: any = await api.get('/character');
+    const url = `/character/?page=${page}&name=${filter}`;
+    console.log(url);
+
+    const response: any = await api.get(url);
     const items = buildObject(response.data.results);
     return items;
 }
@@ -35,7 +39,8 @@ function buildObject(data: any[]): characterProps[] {
             image: item.image,
             species: item.species,
             gender: item.gender,
-            status: item.status
+            status: item.status,
+            origin: item.origin.name,
         }
 
         return buildedItem;
@@ -66,7 +71,5 @@ function getRandomNumbers() {
 }
 
 
-
-
-export { characterProps, getAll, getSomeCharacters }
+export { characterProps, getPage, getSomeCharacters }
 

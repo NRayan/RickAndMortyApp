@@ -5,14 +5,14 @@ export const ss = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
-        paddingHorizontal: 20,
+        paddingBottom: 20
     },
     header: {
         flexDirection: 'row',
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 20
+        marginTop: 20,
     },
     title: {
         fontSize: 36,

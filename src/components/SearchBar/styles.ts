@@ -4,7 +4,6 @@ import { theme } from '../../global/theme'
 export const ss = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        width: '100%',
         alignItems: 'center',
         backgroundColor: theme.colors.secondary,
         borderRadius: 100,

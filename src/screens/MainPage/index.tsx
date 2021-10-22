@@ -5,7 +5,7 @@ import { ss } from './styles'
 import LogoImg from '../../assets/logo.png'
 import PickeImg from '../../assets/pickerick.png'
 import { characterProps, getSomeCharacters } from '../../services/caracterService'
-import { locationProps, getSomeLocations, getAll } from '../../services/locationService'
+import { locationProps, getSomeLocations } from '../../services/locationService'
 import { CharacterCardSimple } from '../../components/CharacterCardSimple'
 import { theme } from '../../global/theme'
 import { DiceButton } from '../../components/DiceButton'
@@ -14,9 +14,7 @@ import { SeeEpisodesButton } from '../../components/SeeEpisodesButton'
 import { InfoButton } from '../../components/InfoButton'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/core'
-import { PageNames, RoutePageNames } from '../../routes'
-
-
+import { PageNames } from '../../routes/pageNames'
 
 export function MainPage() {
 

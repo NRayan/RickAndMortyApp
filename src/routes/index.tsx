@@ -3,12 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { MainPage } from '../screens/MainPage';
 import { CharactersList } from '../screens/CharactersList';
 import { NavigationContainer } from '@react-navigation/native';
-
-const PageNames =
-{
-    Main: 'MainPage',
-    CharList: 'CharactersList',
-}
+import { PageNames } from './pageNames';
 
 function AppRoutes() {
     const Stack = createStackNavigator();

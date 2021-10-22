@@ -7,13 +7,14 @@ import { TextInput } from 'react-native-gesture-handler';
 
 type Props = {
     style?: StyleProp<ViewStyle>
+    onChangeText?: (text: string) => void
 }
 
-export function SearchBar({ style }: Props) {
+export function SearchBar({ style, onChangeText }: Props) {
     return (
         <View style={[ss.container, style]}>
             <FontAwesome name="search" size={24} color={theme.colors.primary} />
-            <TextInput style={ss.input} placeholder="search..." placeholderTextColor={theme.colors.text2} maxLength={35} />
+            <TextInput onChangeText={onChangeText} style={ss.input} placeholder="search..." placeholderTextColor={theme.colors.text2} maxLength={35} />
         </View>
     )
 }
