@@ -5,14 +5,13 @@ export const ss = StyleSheet.create({
     container: {
         marginLeft: 20,
         height: 140,
-        // width: 220,
         maxWidth: 240,
         borderRadius: 10,
-        paddingHorizontal: 10,
+        paddingHorizontal: 15,
         paddingVertical: 15,
-        backgroundColor: theme.colors.secondary,
         justifyContent: 'space-around',
-        alignItems: 'center'
+        alignItems: 'center',
+        
     },
     title: {
         fontSize: 15,
@@ -29,10 +28,5 @@ export const ss = StyleSheet.create({
         fontSize: 12,
         color: theme.colors.text1,
         fontFamily: theme.fonts.text600
-    },
-    planetIcon: {
-        position: 'absolute',
-        right: -10,
-        top: -10
     }
 })

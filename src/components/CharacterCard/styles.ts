@@ -29,5 +29,9 @@ export const ss = StyleSheet.create({
         color: theme.colors.text1,
         fontFamily: theme.fonts.text400,
         marginLeft: 3
-    }
+    },
+    valueView: {
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
 })

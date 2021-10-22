@@ -23,12 +23,11 @@ export const ss = StyleSheet.create({
         marginTop: 10,
     },
     chacartersScrollContainer: {
-        height: 140,
-        paddingRight: 20
+        paddingRight: 20,
     },
     locationsScrollContainer: {
-        height: 150,
-        paddingRight: 30,
+        height: 140,
+        paddingRight: 20,
         alignItems: 'flex-end'
     },
     locationsView: {

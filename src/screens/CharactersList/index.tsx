@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native'
+import { View, Text, TouchableOpacity, ActivityIndicator, Image } from 'react-native'
 import { StatusBarPadding } from '../../components/StatusBarPadding'
 import { ss } from './styles'
 import { Ionicons } from '@expo/vector-icons';
@@ -9,6 +9,7 @@ import { SearchBar } from '../../components/SearchBar';
 import { characterProps, getPage } from '../../services/caracterService';
 import { FlatList } from 'react-native-gesture-handler';
 import { CharacterCard } from '../../components/CharacterCard';
+import PoppyIcon from '../../assets/poopybutthole.png'
 
 type getParams = {
     page: number,
@@ -29,12 +30,15 @@ export function CharactersList() {
         const chars = await getPage(getParams.page, getParams.nameFilter)
 
         if (chars.length > 0) {
-            if (getParams.page > 1)
+            if (getParams.page > 1) {
                 setCharacters([...characters, ...chars]);
+                if (chars.length < 20) {
+                    setEndReached(true);
+                }
+            }
             else
                 setCharacters([...chars]);
         } else {
-            console.log('erro')
             setEndReached(true)
         }
 
@@ -42,7 +46,7 @@ export function CharactersList() {
     }
 
     function handleOnEndReached() {
-        if (loading) return
+        if (loading || endReached) return
         setGetParams({ page: getParams.page + 1, nameFilter: getParams.nameFilter })
     }
 
@@ -59,19 +63,22 @@ export function CharactersList() {
         return (<CharacterCard data={item} />)
     }, []);
 
-    const renderFooter = useCallback(() => {
+    function renderFooter() {
         if (endReached)
             return (null)
         else
             return (<ActivityIndicator color={theme.colors.primary} size="large" style={{ marginVertical: 20 }} />)
-    }, []);
+    };
 
     useEffect(() => {
+        setEndReached(false);
         getChars()
     }, [getParams])
 
     return (
         <View style={ss.container}>
+
+            <Image source={PoppyIcon} style={ss.image} />
 
             <StatusBarPadding />
 
@@ -94,7 +101,7 @@ export function CharactersList() {
                         onEndReached={handleOnEndReached}
                         ListFooterComponent={renderFooter}
                         style={{ marginBottom: 10 }}
-                        contentContainerStyle={{ paddingHorizontal: 20 }}
+                        contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 20 }}
                     />
             }
 

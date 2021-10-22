@@ -15,6 +15,7 @@ import { InfoButton } from '../../components/InfoButton'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/core'
 import { PageNames } from '../../routes/pageNames'
+import { ModalView } from '../../components/ModalView'
 
 export function MainPage() {
 
@@ -25,6 +26,8 @@ export function MainPage() {
 
     const [locations, setLocations] = useState<locationProps[]>([]);
     const [locationsLoading, setLocationsLoading] = useState(true)
+
+    const [episodesModalVisible, setEpisodesModalVisible] = useState(false)
 
     async function getCharacters() {
         if (!charactersLoading) setCharactersLoading(true);
@@ -63,10 +66,9 @@ export function MainPage() {
                     <DiceButton onPress={getCharacters} />
                 </View>
 
-
                 {
                     charactersLoading ?
-                        <ActivityIndicator size="large" color={theme.colors.primary} style={{ height: 140 }} />
+                        <ActivityIndicator size="large" color={theme.colors.primary} style={{ height: 152 }} />
                         :
                         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={ss.chacartersScrollContainer}>
                             {
@@ -89,7 +91,7 @@ export function MainPage() {
 
                 {
                     locationsLoading ?
-                        <ActivityIndicator size="large" color={theme.colors.primary} style={{ height: 150 }} />
+                        <ActivityIndicator size="large" color={theme.colors.primary} style={{ height: 140 }} />
                         :
                         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={ss.locationsScrollContainer}>
                             {
@@ -103,9 +105,15 @@ export function MainPage() {
             <View style={ss.footer} >
                 <View style={ss.footerLine}>
                     <InfoButton />
-                    <SeeEpisodesButton />
+                    <SeeEpisodesButton onPress={() => { setEpisodesModalVisible(true) }} />
                 </View>
             </View>
+
+            <ModalView outTap={() => { setEpisodesModalVisible(false) }} visible={episodesModalVisible}>
+                <View>
+                    <Text>asd</Text>
+                </View>
+            </ModalView>
 
         </ScrollView>
     )

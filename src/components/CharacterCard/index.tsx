@@ -4,10 +4,8 @@ import { characterProps } from '../../services/caracterService'
 import { ss } from './styles'
 import { theme } from '../../global/theme'
 
-import DeadFaceIcon from '../../assets/deadFace.svg'
-import AlienIcon from '../../assets/alien.svg'
-import GenderIcon from '../../assets/gender.svg'
-import LocationIcon from '../../assets/location.svg'
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
+import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 
 type props = {
     data: characterProps
@@ -15,7 +13,6 @@ type props = {
 export function CharacterCard({ data }: props) {
 
     const { image, name, gender, species, status, origin } = data;
-
     const iconSize = 16
 
     return (
@@ -28,28 +25,30 @@ export function CharacterCard({ data }: props) {
                 <Text style={ss.name}>{name}</Text>
 
                 <View>
+
                     <View style={{ flexDirection: 'row' }}>
-
-                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <DeadFaceIcon fill={theme.colors.primary} height={iconSize} width={iconSize} />
-                            <Text style={ss.value}>{status}</Text>
-                        </View>
-
-                        <View style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: 8 }}>
-                            <AlienIcon fill={theme.colors.primary} height={iconSize} width={iconSize} />
+                        <View style={ss.valueView}>
+                            <MaterialCommunityIcons name="alien" color={theme.colors.primary} size={iconSize} />
                             <Text style={ss.value}>{species}</Text>
                         </View>
 
-                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <GenderIcon fill={theme.colors.primary} height={iconSize} width={iconSize} />
+                        <View style={[ss.valueView, { marginLeft: 6 }]}>
+                            <MaterialCommunityIcons name="gender-male-female" color={theme.colors.primary} size={iconSize} />
                             <Text style={ss.value}>{gender}</Text>
                         </View>
                     </View>
 
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 8 }}>
-                        <LocationIcon fill={theme.colors.primary} height={iconSize} width={iconSize} />
+                    <View style={[ss.valueView, { marginVertical: 3 }]}>
+
+                        <MaterialCommunityIcons name={status === 'Dead' ? "emoticon-dead" : "emoticon-happy"} color={theme.colors.primary} size={iconSize} />
+                        <Text style={ss.value}>{status}</Text>
+                    </View>
+
+                    <View style={ss.valueView}>
+                        <MaterialIcons name="location-pin" color={theme.colors.primary} size={iconSize} />
                         <Text style={ss.value}>{origin}</Text>
                     </View>
+
                 </View>
 
             </View>

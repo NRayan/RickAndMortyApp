@@ -12,12 +12,20 @@ export const ss = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 20,
+        marginVertical: 20,
     },
     title: {
         fontSize: 36,
         color: theme.colors.text1,
         fontFamily: theme.fonts.title,
         marginTop: -3,
+    },
+    image: {
+        position: 'absolute',
+        right: -50,
+        top: 30,
+        height: 120,
+        width: 120,
+        transform: [{ rotate: '320deg' }]
     }
 })
