@@ -7,19 +7,6 @@ export const ss = StyleSheet.create({
         backgroundColor: theme.colors.background,
         paddingBottom: 20
     },
-    header: {
-        flexDirection: 'row',
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginVertical: 20,
-    },
-    title: {
-        fontSize: 36,
-        color: theme.colors.text1,
-        fontFamily: theme.fonts.title,
-        marginTop: -3,
-    },
     image: {
         position: 'absolute',
         right: -50,

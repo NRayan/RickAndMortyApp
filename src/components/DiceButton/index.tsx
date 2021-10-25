@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleProp, ViewStyle } from 'react-native
 import { ss } from './styles'
 import DiceIcon from '../../assets/dice.svg'
 import { theme } from '../../global/theme'
+import { LinearGradient } from 'expo-linear-gradient'
 
 type props = {
     style?: StyleProp<ViewStyle>
@@ -10,8 +11,10 @@ type props = {
 }
 export function DiceButton({ style, onPress }: props) {
     return (
-        <TouchableOpacity style={[ss.container, style]} onPress={onPress}>
-            <DiceIcon width={28} height={28} fill={theme.colors.primary} />
-        </TouchableOpacity>
+        <LinearGradient style={[ss.container, style]} colors={[theme.colors.background2, theme.colors.secondary]}>
+            <TouchableOpacity onPress={onPress}>
+                <DiceIcon width={28} height={28} fill={theme.colors.primary} />
+            </TouchableOpacity>
+        </LinearGradient>
     )
 }

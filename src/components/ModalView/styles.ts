@@ -14,16 +14,17 @@ export const ss = StyleSheet.create({
         borderTopRightRadius: 20,
     },
     containerContent: {
-        paddingBottom: 20,
-        maxWidth: 360,
-        alignSelf: 'center'
+        paddingBottom: 30,
+        marginHorizontal: 20,
+        alignContent: 'center',
+        maxWidth: 400
     },
     bar: {
         width: 50,
         height: 2,
         borderRadius: 1,
         backgroundColor: theme.colors.line,
-        alignSelf: 'center',
-        marginVertical: 30
+        marginVertical: 30,
+        alignSelf: 'center'
     }
 })

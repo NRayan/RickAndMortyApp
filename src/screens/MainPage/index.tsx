@@ -16,6 +16,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/core'
 import { PageNames } from '../../routes/pageNames'
 import { ModalView } from '../../components/ModalView'
+import { InfoPage } from '../InfoPage'
 
 export function MainPage() {
 
@@ -27,7 +28,7 @@ export function MainPage() {
     const [locations, setLocations] = useState<locationProps[]>([]);
     const [locationsLoading, setLocationsLoading] = useState(true)
 
-    const [episodesModalVisible, setEpisodesModalVisible] = useState(false)
+    const [showModal, setShowModal] = useState(false)
 
     async function getCharacters() {
         if (!charactersLoading) setCharactersLoading(true);
@@ -42,14 +43,18 @@ export function MainPage() {
         setLocations(Chars);
     }
 
-    function handleSeeAllClick() {
+    function handleSeeAllCharactersPress() {
         navigation.navigate(PageNames.CharList)
+    }
+
+    function handleSeeEpisodesPress() {
+        navigation.navigate(PageNames.EpisodesList)
     }
 
     useEffect(() => { getCharacters(); getLocations() }, []);
 
-    useEffect(() => { if (charactersLoading) setCharactersLoading(false) }, [characters])
-    useEffect(() => { if (locationsLoading) setLocationsLoading(false) }, [locations])
+    useEffect(() => { if (charactersLoading && characters.length > 0) setCharactersLoading(false); }, [characters]);
+    useEffect(() => { if (locationsLoading && locations.length > 0) setLocationsLoading(false) }, [locations])
 
     return (
         <ScrollView style={ss.container} contentContainerStyle={{ flexGrow: 1 }}>
@@ -77,7 +82,7 @@ export function MainPage() {
                         </ScrollView>
                 }
 
-                <TouchableOpacity style={{ alignSelf: 'flex-end' }} onPress={handleSeeAllClick}>
+                <TouchableOpacity style={{ alignSelf: 'flex-end' }} onPress={handleSeeAllCharactersPress}>
                     <Text style={ss.seeAll}>See all {'>'}</Text>
                 </TouchableOpacity>
 
@@ -104,15 +109,13 @@ export function MainPage() {
 
             <View style={ss.footer} >
                 <View style={ss.footerLine}>
-                    <InfoButton />
-                    <SeeEpisodesButton onPress={() => { setEpisodesModalVisible(true) }} />
+                    <InfoButton onPress={() => { setShowModal(true) }} />
+                    <SeeEpisodesButton onPress={handleSeeEpisodesPress} />
                 </View>
             </View>
 
-            <ModalView outTap={() => { setEpisodesModalVisible(false) }} visible={episodesModalVisible}>
-                <View>
-                    <Text>asd</Text>
-                </View>
+            <ModalView visible={showModal} outPress={() => { setShowModal(false) }}>
+                <InfoPage />
             </ModalView>
 
         </ScrollView>

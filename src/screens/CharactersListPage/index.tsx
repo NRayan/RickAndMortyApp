@@ -10,13 +10,14 @@ import { characterProps, getPage } from '../../services/caracterService';
 import { FlatList } from 'react-native-gesture-handler';
 import { CharacterCard } from '../../components/CharacterCard';
 import PoppyIcon from '../../assets/poopybutthole.png'
+import { Header } from '../../components/Header';
 
 type getParams = {
     page: number,
     nameFilter: string,
 }
 
-export function CharactersList() {
+export function CharactersListPage() {
 
     const navigation = useNavigation();
 
@@ -82,12 +83,7 @@ export function CharactersList() {
 
             <StatusBarPadding />
 
-            <View style={ss.header}>
-                <TouchableOpacity onPress={handleBackButtonPress} style={{ position: 'absolute', left: 20 }}>
-                    <Ionicons name='chevron-back' size={40} color={theme.colors.text1} />
-                </TouchableOpacity>
-                <Text style={ss.title}>Characters</Text>
-            </View>
+            <Header title="Characters" />
 
             {
                 loading ?

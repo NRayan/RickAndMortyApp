@@ -14,8 +14,6 @@ async function getPage(page: number, filter: string): Promise<characterProps[]> 
 
     try {
         const url = `/character/?page=${page}&name=${filter}`;
-        console.log(url);
-
         const response: any = await api.get(url);
         const items = buildObject(response.data.results);
         return items;

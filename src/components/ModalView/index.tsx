@@ -5,10 +5,10 @@ import { ss } from './styles'
 type Props = ModalProps &
 {
     children: ReactNode,
-    outTap: () => void
+    outPress: () => void
 }
 
-export function ModalView({ children, outTap, ...rest }: Props) {
+export function ModalView({ children, outPress, ...rest }: Props) {
     return (
         <Modal
             transparent
@@ -18,7 +18,7 @@ export function ModalView({ children, outTap, ...rest }: Props) {
 
             <View style={ss.overlay}>
 
-                <TouchableWithoutFeedback onPress={outTap}>
+                <TouchableWithoutFeedback onPress={outPress}>
                     <View style={{ flex: 1 }} />
                 </TouchableWithoutFeedback>
 
