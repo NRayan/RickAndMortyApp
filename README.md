@@ -1,7 +1,11 @@
 ![readmeBanner](https://user-images.githubusercontent.com/28107591/138726044-29e0f638-5c4e-43b4-a2dc-89c6a6dd0608.png)
 
-## About the project 
-the project has born by the ancient of the mster of the class and we've come together to unti asdsad with de abracadeve 🛸
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/28107591/138737040-41938d61-cb16-4d07-a20d-6c205bc9f30f.png" alt="mockup"/>
+</p>
+
+## About the project 🛸
+the project has born by the ancient of the mster of the class and we've come together to unti asdsad with de abracadeve
 
 ## Tecnologies used
 <table>
@@ -33,5 +37,10 @@ the project has born by the ancient of the mster of the class and we've come tog
 3. Paste it on Expo Go
 
 
+## More
+
 ### Expo link
 https://expo.io/@nrayan/RickAndMortyApp
+
+### Figma prototype 
+https://www.figma.com/file/14gkM69hXvUTj6J8M6wRm8/Rick-%26-Morty?node-id=0%3A1
