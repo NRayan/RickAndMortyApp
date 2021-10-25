@@ -22,7 +22,7 @@ React Native App that provides data about the **Rick and Morty TV Show**
 </tr>
 </table>
 
-## Provided data by:
+## Provided data by
 [The Rick and Morty API](https://rickandmortyapi.com)
 
 ## How to run 
