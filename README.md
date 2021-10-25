@@ -5,7 +5,7 @@
 </p>
 
 ## About the project 🛸
-the project has born by the ancient of the mster of the class and we've come together to unti asdsad with de abracadeve
+React Native App that provides data about the **Rick and Morty TV Show**
 
 ## Tecnologies used
 <table>
@@ -21,6 +21,9 @@ the project has born by the ancient of the mster of the class and we've come tog
   </td>
 </tr>
 </table>
+
+## Provided data by:
+[The Rick and Morty API](https://rickandmortyapi.com)
 
 ## How to run 
 
