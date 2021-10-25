@@ -1,4 +1,4 @@
-![readmeBanner](https://user-images.githubusercontent.com/28107591/138726044-29e0f638-5c4e-43b4-a2dc-89c6a6dd0608.png)
+![banner](https://user-images.githubusercontent.com/28107591/138739579-a98e384e-eb4c-4677-b3da-6494995c2bfa.png)
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/28107591/138737040-41938d61-cb16-4d07-a20d-6c205bc9f30f.png" alt="mockup"/>
