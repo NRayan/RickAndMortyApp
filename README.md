@@ -7,22 +7,16 @@
 ## About the project 🛸
 React Native App that provides data about the **Rick and Morty TV Show**
 
-## Tecnologies used
-<table>
-<tr>
-  <td>
-    React Native
-  </td>
-   <td>
-    Expo
-  </td>
-   <td>
-    Figma
-  </td>
-</tr>
-</table>
+![Badge](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
-## Provided data by
+[![runs with Expo Go](https://img.shields.io/badge/Runs%20with%20Expo%20Go-000.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.io/client)
+
+
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+
+
+
+## Consumed API 👽
 [The Rick and Morty API](https://rickandmortyapi.com)
 
 ## How to run 
