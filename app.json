@@ -4,7 +4,7 @@
     "slug": "RickAndMortyApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/appIcon.png",
+    "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splashscreen.png",
       "resizeMode": "cover",
@@ -21,9 +21,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./assets/adaptIcon.png",
+        "backgroundColor": "#23182C"
+      },
+      "package": "com.nrdev.RickAndMortyApp"
     },
     "androidStatusBar": {
       "translucent": true,
